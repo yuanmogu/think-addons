@@ -1,0 +1,38 @@
+{
+    "name": "yuanmogu/think-addons",
+    "description": "The ThinkPHP6 Addons Package for beicms",
+    "keywords": [
+    	"addons",
+        "beicms",
+        "thinkphp"
+    ],    
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yuanmogu",
+            "email": "67180273@qq.com"
+        }
+    ],
+    "homepage": "https://www.beisoo.com/",
+    "require": {
+        "php": ">=7.1.0",
+        "topthink/framework": "^6.0",
+        "topthink/think-view": "^1.0",
+        "topthink/think-helper": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "think\\": "src/"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "think\\addons\\Service"
+            ]          
+        }
+    }
+}
