@@ -51,7 +51,10 @@ abstract class Addons
 
         $this->view = new Think($app, config('view'));
         $this->view->config([
-            'view_path' => $this->addon_path . 'view' . DIRECTORY_SEPARATOR
+            'view_path' => $this->addon_path . 'view' . DIRECTORY_SEPARATOR,
+            'tpl_replace_string'=>[
+               '__ADDONS__' => '/static/addons/'.$this->name.'/'
+            ]
         ]);
 
 	
