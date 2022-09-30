@@ -20,14 +20,8 @@ class HomeController  extends addons
     // 初始化
     protected function initialize()
     {
-		$this->view->config([
-            'tpl_replace_string'=>[
-               '__addons__' => '/static/addons/'.$this->name.'/'
-            ]
-        ]);
-	
-	}
-
+        parent::initialize();
+    }
 
 
     /**
