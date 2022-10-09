@@ -27,8 +27,8 @@ class Service extends \think\Service
         Lang::load([
             $this->app->getRootPath() . '/vendor/yuanmogu/think-addons/src/lang/zh-cn.php'
         ]);
-        // 自动载入插件
-        $this->autoload();
+	// 自动载入插件 // 判断 CMS 是否已经安装，如果未安装，就略过
+	if(is_file(root_path().'.env')) $this->autoload();
         // 加载插件事件
         $this->loadEvent();
         // 加载插件系统服务
