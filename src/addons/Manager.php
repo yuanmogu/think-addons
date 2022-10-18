@@ -157,10 +157,11 @@ class Manager
 				try {
 					$info = get_addons_info($name);
 					$data = [];
-					$data['pid'] = 21;
+					$data['pid'] = 99;
 					$data['title'] = $info['title'];
+					$data['icon'] = !empty($info['icon']) ? $info['icon'] : 'bi-usb-symbol';
 					$data['url'] = '@addons/'.$name.'/admin.index/index';
-					$data['node'] = 'addons.'.$name;
+
 					Db::name('system_menu')->insert($data);
 
 				} catch (\Exception $e) {
@@ -168,7 +169,7 @@ class Manager
 				}
 			}
 			if ($action == 'uninstall') {
-				Db::table('system_menu')->where('node','addons.'.$name)->delete();
+				Db::table('system_menu')->where('url','like','@addons/'.$name.'/'.'%')->delete();
 			}
 		}
 		return true;
