@@ -127,10 +127,9 @@ test为插件名，Action为controller中的类名[多级控制器可以用.分�
 <?php
 namespace addons\demo\controller;
 
-//可继承前台类，提供 $this->success(); $this->error(); 方法，可自己扩展。
-use think\Addons\HomeController;
+use think\Addons;
 
-class Index extends HomeController
+class Index extends Addons
 {
     public function link()
     {
